@@ -72,7 +72,7 @@ This portfolio is built to deliver a fast, clean, and thoughtful presentation of
 
 ## 📬 Contact & Connect
 
-- **Portfolio:** [portfolio-5pcppfit3-abigiya.vercel.app](https://portfolio-5pcppfit3-abigiya.vercel.app/)
+- **Portfolio:** [https://portfolio-dusky-two-dw1dosxn0o.vercel.app/](https://portfolio-dusky-two-dw1dosxn0o.vercel.app/)
 - **GitHub:** [@abigiya-solomon](https://github.com/abigiya-solomon)
 - **LinkedIn:** [Abigiya Solomon](https://www.linkedin.com/in/abigiya-solomon-66a60a201)
 - **Email:** [abigiyasolomon09@gmail.com](mailto:abigiyasolomon09@gmail.com)
