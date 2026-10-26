@@ -2,7 +2,7 @@
 
 A modern, responsive personal portfolio showcasing projects, experience, and skills in Software Engineering, AI, and Data Science.
 
-🔗 **Live Site:** [https://portfolio-5pcppfit3-abigiya.vercel.app/](https://portfolio-5pcppfit3-abigiya.vercel.app/)
+🔗 **Live Site:** [https://portfolio-dusky-two-dw1dosxn0o.vercel.app/](https://portfolio-dusky-two-dw1dosxn0o.vercel.app/)
 
 ---
 
