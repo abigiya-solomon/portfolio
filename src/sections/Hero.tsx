@@ -19,7 +19,7 @@ export function Hero() {
           <div className="mt-8 flex flex-wrap gap-3">
             <Button href="#projects">View My Work</Button>
             <Button href="#contact" variant="ghost">Let&apos;s Connect</Button>
-            {profile.resume && <Button href={profile.resume} variant="ghost" external><Download size={16} aria-hidden />CV</Button>}
+            {profile.resume && <Button href={profile.resume} download="Abigiya-Solomon-Resume.pdf" variant="ghost"><Download size={16} aria-hidden />CV</Button>}
           </div>
           <SocialLinks className="mt-8" />
         </motion.div>

@@ -4,9 +4,9 @@ export const profile = {
   tagline: 'Building thoughtful digital experiences while exploring the intersection of software, AI, and data.',
   email: 'abigiyasolomon09@gmail.com',
   photo: '/profile.png',
-  resume: '', // put a PDF in /public (e.g. cv.pdf) and set '/cv.pdf'
-  formEndpoint: '', // e.g. a Formspree URL. Empty = form falls back to mailto (needs email).
-  socials: { github: 'https://github.com/abigiya-solomon', linkedin: 'https://www.linkedin.com/in/abigiya-solomon-66a60a201' }, // full URLs
+  resume: '/Abigiya-Solomon-Resume.pdf',
+  formEndpoint: 'https://formsubmit.co/ajax/abigiyasolomon09@gmail.com',
+  socials: { github: 'https://github.com/abigiya-solomon', linkedin: 'https://www.linkedin.com/in/abigiya-solomon-66a60a201' },
 }
 export const nav = [
   { id: 'home', label: 'Home' }, { id: 'about', label: 'About' }, { id: 'projects', label: 'Projects' },

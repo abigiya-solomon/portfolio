@@ -19,19 +19,72 @@ const offsetOf = (i: number, index: number) => {
 export function Projects() {
   const [selected, setSelected] = useState<Project | null>(null)
   const [index, setIndex] = useState(0)
+  const [isInView, setIsInView] = useState(false)
   const reduceMotion = useReducedMotion()
   const touchX = useRef<number | null>(null)
   const prevOffsets = useRef<number[] | null>(null)
+  const carouselRef = useRef<HTMLDivElement>(null)
 
   const go = (step: number) => setIndex((i) => (i + step + n) % n)
   const offsets = projects.map((_, i) => offsetOf(i, index))
   useEffect(() => { prevOffsets.current = offsets })
 
+  useEffect(() => {
+    const el = carouselRef.current
+    if (!el) return
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsInView(entry.isIntersecting),
+      { threshold: 0.15 },
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
+
+  useEffect(() => {
+    if (selected) return
+    const handleKeyDown = (e: KeyboardEvent) => {
+      const target = e.target as HTMLElement | null
+      const isInput = target && (
+        target.tagName === 'INPUT' ||
+        target.tagName === 'TEXTAREA' ||
+        target.tagName === 'SELECT' ||
+        target.isContentEditable
+      )
+      if (isInput) return
+
+      const isFocused = carouselRef.current?.contains(document.activeElement)
+      if (isInView || isFocused) {
+        if (e.key === 'ArrowLeft') {
+          e.preventDefault()
+          go(-1)
+        } else if (e.key === 'ArrowRight') {
+          e.preventDefault()
+          go(1)
+        }
+      }
+    }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [selected, isInView])
+
   return (
     <Section id="projects" title="Featured projects" intro="Systems I've built and experiences that shaped my direction. Open any of them for the full story.">
       <div
-        role="region" aria-roledescription="carousel" aria-label="Featured projects"
-        className="[--card-w:min(76vw,532px)] [--gap:1rem] md:[--gap:1.5rem]"
+        ref={carouselRef}
+        tabIndex={0}
+        role="region"
+        aria-roledescription="carousel"
+        aria-label="Featured projects (Use left and right arrow keys to navigate)"
+        onKeyDown={(e) => {
+          if (e.key === 'ArrowLeft') {
+            e.preventDefault()
+            go(-1)
+          } else if (e.key === 'ArrowRight') {
+            e.preventDefault()
+            go(1)
+          }
+        }}
+        className="outline-none focus-visible:ring-1 focus-visible:ring-accent/40 rounded-2xl [--card-w:min(76vw,532px)] [--gap:1rem] md:[--gap:1.5rem]"
         onTouchStart={(e) => { touchX.current = e.touches[0].clientX }}
         onTouchEnd={(e) => {
           if (touchX.current === null) return

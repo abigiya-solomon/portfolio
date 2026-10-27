@@ -1,31 +1,10 @@
 import type { Project } from '../types'
-const TODO = 'TODO: describe exactly what you built or owned in this project.'
 
 export const projects: Project[] = [
   {
-    id: 'internship-system', kind: 'platform', badge: 'Full-stack · AI', title: 'AI-Powered Internship Recommendation & Management System',
-    summary: 'A platform connecting students, universities, organizations and administrators around internships, with role-based access and recommendations.',
-    tech: ['React', 'Node.js / Express', 'PostgreSQL', 'JWT', 'REST API', 'Recommendation concepts'],
-    overview: 'A platform designed to manage internship opportunities and connect students, universities, organizations, and administrators. It includes role-based access, internship management, student profiles, applications, placements, and recommendation capabilities.',
-    problem: 'Internship placement involves several parties, and coordinating opportunities, applications and placements across them is hard to track in one place.',
-    solution: 'A role-based web application that gives each stakeholder their own workspace around shared internship data, with a recommendation layer to help match students with relevant opportunities.',
-    features: ['Role-based access for students, universities, organizations and admins', 'Internship posting and management', 'Student profiles', 'Applications and placements', 'Recommendation capabilities'],
-    contribution: TODO,
-    challenges: ['Keeping permissions clean across four user roles', 'Modelling applications and placements consistently', 'Introducing recommendation logic into a conventional web stack'],
-  },
-  {
-    id: 'enat-milk-shop', kind: 'inventory', badge: 'Business system', title: 'Enat Milk Shop Management System',
-    summary: 'A real business-oriented system replacing manual inventory and sales processes for a milk shop.',
-    tech: ['React', 'TypeScript', 'Laravel', 'MySQL', 'Ant Design', 'REST API'],
-    overview: 'A management system designed to replace manual inventory and sales processes for a milk shop. It handles products, product types, inventory, stock movements, sales-related records, customer contracts, and role-based access.',
-    problem: 'Tracking stock, sales and customer agreements by hand is slow and error-prone, especially for perishable products.',
-    solution: 'A web application with a TypeScript/React interface on a Laravel and MySQL backend that records products, stock movements and sales in one system.',
-    features: ['Products and product types', 'Inventory and stock movements', 'Sales-related records', 'Customer contracts', 'Role-based access'],
-    contribution: TODO,
-    challenges: ['Representing stock movements so inventory stays accurate', 'Designing data-heavy screens that stay usable for shop staff'],
-  },
-  {
     id: 'aml-analysis', kind: 'data', badge: 'Data · ML', title: 'AML Cross-Border Transaction Analysis',
+    github: 'https://github.com/abigiya-solomon/AML_cross_boarder_transaction_analysis',
+    live: 'https://aml-cross-boarder-transaction-analy-two.vercel.app',
     screenshots: [
       {src: '/screenshots/AML/Dashboard2.png', alt: 'Dashboard of AML Cross-Border Transaction Analysis System', caption: 'Dashboard'},
       {src: '/screenshots/AML/Transaction.png', alt: 'Transaction of AML Cross-Border Transaction Analysis System', caption: 'Transaction'},
@@ -37,18 +16,58 @@ export const projects: Project[] = [
     problem: 'Suspicious activity is rare and hidden inside large volumes of ordinary transactions, so it is difficult to spot manually.',
     solution: 'Analyse the transaction data with Pandas, train a LightGBM model to flag unusual patterns, and expose the results through a FastAPI service.',
     features: ['Exploratory analysis of transaction data', 'Machine-learning model built with LightGBM', 'FastAPI service for model access'],
-    contribution: TODO,
+    contribution: 'Developed an AI-powered AML cross-border transaction analysis system processing a **31.9-million-transaction dataset**, training and comparing **7 machine-learning models** on **340,000+ transactions**, and achieving **99.87% recall** with LightGBM.',
     challenges: ['Working with heavily imbalanced data', 'Choosing evaluation measures that fit the problem'],
   },
   {
-    id: 'insa-summer-camp', kind: 'camp', badge: 'Experience', title: 'INSA Summer Camp — AI & Big Data',
-    summary: 'Selected through a competitive process; worked in the Emerging Technologies environment with a focus on AI and Big Data.',
-    tech: ['AI', 'Big Data', 'Data processing', 'PySpark', 'Python'],
-    overview: 'I was selected for the INSA Summer Camp after a competitive selection process and worked within the Emerging Technologies environment. My main focus became AI and Big Data.',
-    problem: 'I wanted to move beyond classroom theory and learn how AI and data systems are built in practice.',
-    solution: 'Learning by doing: practical project work in AI and Big Data, alongside other participants.',
-    features: ['AI', 'Big Data', 'Data processing', 'Learning through practical projects', 'Collaboration'],
-    contribution: TODO,
-    challenges: ['Picking up new tools and concepts quickly', 'Working effectively as part of a team'],
+    id: 'ai-predictive-maintenance', kind: 'platform', badge: 'AI / Machine Learning', title: 'AI-Powered Predictive Maintenance',
+    github: 'https://github.com/abigiya-solomon/AI-Powered-Predictive-Maintenance',
+    live: 'https://ai-powered-predictive-maintenance-35zrb2uy3-abigiya.vercel.app',
+    screenshots: [
+      {src: '/screenshots/PredictiveMaintenance/AI_Assistant.png', alt: 'Dashboard of AML Cross-Border Transaction Analysis System', caption: 'Dashboard'},
+      {src: '/screenshots/PredictiveMaintenance/ModelBenchmark.png', alt: 'Transaction of AML Cross-Border Transaction Analysis System', caption: 'Transaction'},
+      {src: '/screenshots/PredictiveMaintenance/Overview.png', alt: 'ModelPerformance of AML Cross-Border Transaction Analysis System', caption: 'ModelPerformance'},
+    ],
+    summary: 'Detecting abnormal air compressor behavior using machine learning and sensor data.',
+    tech: ['Python', 'Scikit-learn', 'Pandas', 'One-Class SVM', 'React', 'Flask'],
+    overview: 'An ML system that analyzes MetroPT-3 sensor data to detect unusual operating patterns in metro-train air compressors.',
+    problem: 'Unexpected compressor faults can disrupt railway operations and maintenance planning.',
+    solution: 'Built an anomaly-detection pipeline using One-Class SVM, sensor feature engineering, and persistence-based alerts.',
+    features: ['Sensor analysis', 'Anomaly detection', 'Maintenance alerts', 'Time-series visualization'],
+    contribution: 'Developed and evaluated the original ML pipeline, engineered time-series sensor features, analyzed anomalies against documented air-leak events, investigated compressor operating states, and designed the frontend–API integration for a deployable monitoring system.',
+    challenges: ['Interpreting time-series anomalies', 'Evaluating detections with limited failure labels']
+  },
+  {
+    id: 'customer-fraud-risk-prediction', kind: 'platform', badge: 'AI / Machine Learning', title: 'Customer Fraud Risk Prediction',
+    github: 'https://github.com/abigiya-solomon/customer-fraud-risk-prediction',
+    live: 'https://customer-fraud-risk-prediction.vercel.app',
+    screenshots: [
+      {src: '/screenshots/FraudRisk/EDA.png', alt: 'Exploratory data analysis of credit card transaction data', caption: 'Exploratory Data Analysis'},
+      {src: '/screenshots/FraudRisk/ModelComparison.png', alt: 'Comparison of seven machine learning models for fraud-risk prediction', caption: 'Model Comparison'},
+      {src: '/screenshots/FraudRisk/RiskScoring.png', alt: 'Customer fraud-risk scoring and model evaluation results', caption: 'Fraud-Risk Evaluation'},
+    ],
+    summary: 'Predicting future customer fraud risk using transaction behavior and machine learning.',
+    tech: ['Python','Pandas','NumPy','Scikit-learn','Matplotlib','Seaborn','Jupyter Notebook'],
+    overview: 'A machine learning project that analyzes large-scale credit card transaction data to identify customers at elevated risk of future fraud using behavioral feature engineering and predictive modeling.',
+    problem: 'Fraud is difficult to detect because fraudulent activity is relatively rare, and transaction-level patterns alone may not reveal customers who are likely to become high-risk.',
+    solution: 'Developed a customer-level fraud-risk scoring pipeline using transaction behavior, engineered 63+ behavioral features, and compared seven machine learning models using precision-recall evaluation to identify the strongest-performing approach.',
+    features: [
+      'Large-scale transaction data analysis',
+      'Exploratory data analysis and visualization',
+      'Customer behavioral feature engineering',
+      'Comparison of seven machine learning models',
+      'Future fraud-risk prediction',
+      'Precision-recall evaluation',
+      'High-risk customer ranking',
+      'Fraud-detection lift analysis'
+    ],
+    contribution: 'Performed exploratory data analysis on 24.4 million+ transactions, engineered 63+ behavioral features, trained and compared seven machine learning models, evaluated performance using PR-AUC, and assessed the practical value of ranking customers by predicted fraud risk.',
+    challenges: [
+      'Handling large-scale transaction data',
+      'Addressing severe class imbalance',
+      'Engineering meaningful customer-level behavioral features',
+      'Selecting appropriate evaluation metrics for rare fraud events',
+      'Translating model predictions into actionable risk rankings'
+    ]
   },
 ]

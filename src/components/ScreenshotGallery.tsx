@@ -1,8 +1,25 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import type { Screenshot } from '../types'
 
 export function ScreenshotGallery({ shots }: { shots: Screenshot[] }) {
   const [index, setIndex] = useState(0)
+
+  useEffect(() => {
+    if (shots.length <= 1) return
+    const onKeyDown = (e: KeyboardEvent) => {
+      const target = e.target as HTMLElement | null
+      if (target && ['INPUT', 'TEXTAREA', 'SELECT'].includes(target.tagName)) return
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault()
+        setIndex((i) => (i - 1 + shots.length) % shots.length)
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault()
+        setIndex((i) => (i + 1) % shots.length)
+      }
+    }
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [shots.length])
   const current = shots[index]
   return (
     <figure>
